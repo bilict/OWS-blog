@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Travel Blog</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo-removebg-preview.png" alt="TravelSpot" style="height: 50px;">
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Pretraži...">
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>Najbolje destinacije ovog tjedna</h1>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card" onclick="openModal('machu-picchu')">
+                <h2>Machu Picchu, Peru</h2>
+                <div class="post-image">
+                    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Machu Picchu, Peru">
+                </div>
+                <p>Drevni grad Inka, jedno od najpoznatijih svjetskih čuda i magična destinacija za sve ljubitelje povijesti i prirode.</p>
+            </div>
+            <div class="card" onclick="openModal('bagan')">
+                <h2>Bagan, Mjanmar</h2>
+                <div class="post-image">
+                    <img src="https://images.unsplash.com/photo-1526203042074-45587ed26c02?q=80&w=3174&auto=format%20fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bagan, Mjanmar">
+                </div>
+                <p>Preko 2000 drevnih hramova i pagoda, idealno mjesto za zalazak sunca i nezaboravna iskustva.</p>
+            </div>
+            <div class="card" onclick="openModal('zhangye')">
+                <h2>Nacionalni geopark Zhangye (Dugine planine), Kina</h2>
+                <div class="post-image">
+                    <img src="https://images.unsplash.com/photo-1628402382626-d6078a447b48?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nacionalni geopark Zhangye (Dugine planine), Kina">
+                </div>
+                <p>Prizori kao iz drugog svijeta – šarene planine koje su rezultat milijuna godina geoloških procesa.</p>
+            </div>
+            <div class="card" onclick="openModal('santorini')">
+                <h2>Santorini, Grčka</h2>
+                <div class="post-image">
+                    <img src="https://images.unsplash.com/photo-1678266561093-324802646fb2?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Santorini, Grčka">
+                </div>
+                <p>Bijele kuće, plavi kupoli i prekrasni zalasci sunca – Santorini je oaza romantike i mira.</p>
+            </div>
+            <div class="card" onclick="openModal('bora-bora')">
+                <h2>Bora Bora</h2>
+                <div class="post-image">
+                    <img src="https://images.unsplash.com/photo-1676405328043-85738f8473ba?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bora Bora">
+                </div>
+                <p>Tropski raj, kristalno čisto more i prekrasni koraljni grebeni – idealno za odmor iz snova.</p>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2><a href="javascript:void(0)" onclick="openModal('ana-putnik')" style="color: inherit; text-decoration: none; cursor:pointer;">O meni</a></h2>
+                <div class="post-image" onclick="openModal('ana-putnik')" style="cursor:pointer;">
+                    <img src="images/Ana Putnik.jpg" alt="O meni">
+                </div>
+                <p>Zovem se Ana Putnik i volim putovati po svijetu. Ovdje dijelim svoja iskustva, savjete i najljepše destinacije.</p>
+            </div>
+            <div class="card">
+                <h3>Popularni postovi</h3>
+                <div class="post-image" onclick="openModal('kaui')" style="cursor:pointer;">
+                    <img src="https://images.unsplash.com/photo-1626284294741-b86640f7a31e?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kaui, Havaji">
+                </div>
+                <div class="post-image" onclick="openModal('banff')" style="cursor:pointer;">
+                    <img src="https://images.unsplash.com/photo-1635956743523-8856c84030ca?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Banff Nacionalni Park, Kanada">
+                </div>
+                <div class="post-image" onclick="openModal('uyuni')" style="cursor:pointer;">
+                    <img src="https://plus.unsplash.com/premium_photo-1675747631203-f3a7431486c8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Salar de Uyuni, Bolivija">
+                </div>
+            </div>
+            <div class="card">
+                <h3>Pratite me</h3>
+                <div class="social">
+                    <hr>
+                    <ul class="social-media-list">
+                        <li><a href="https://www.linkedin.com/in/tea-bili%C4%87-65b18626b/?originalSubdomain=hr" target="_blank" class="contact-icon">
+                            <i class="fab fa-linkedin"></i></a>
+                        </li>
+                        <li><a href="https://github.com/bilict" target="_blank" class="contact-icon">
+                            <i class="fab fa-github"></i></a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modalni prozor -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <h2 id="modalTitle"></h2>
+            <div id="modalText" class="modal-text"></div>
+            <a id="modalLink" href="#" target="_blank" class="modal-link">Pročitaj više</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 TravelSpot. Sva prava pridržana.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

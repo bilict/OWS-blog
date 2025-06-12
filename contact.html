@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kontakt | TravelSpot</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo-removebg-preview.png" alt="TravelSpot" style="height: 50px;">
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section id="contact">
+            <h1 class="section-header">Kontaktirajte nas</h1>
+            <div class="contact-wrapper">
+                <form id="contactForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="name">Ime i prezime</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email adresa</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Poruka</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="send-button">
+                        <div class="alt-send-button">
+                            <i class="fa fa-paper-plane"></i>
+                            <span class="send-text">Pošalji</span>
+                        </div>
+                    </button>
+                    <p id="successMessage" style="display:none; color:#45605e; text-align:center; font-weight:bold;">Poruka je uspješno poslana!</p>
+                </form>
+
+                <div class="direct-contact-container">
+                    <ul class="contact-list">
+                        <li class="list-item"><i class="fas fa-map-marker-alt fa-2x"></i>
+                            <span class="contact-text place">Zagreb, Hrvatska</span>
+                        </li>
+                        <li class="list-item"><i class="fas fa-phone-alt fa-2x"></i>
+                            <span class="contact-text phone"><a href="tel:+385-1-1234-567">+385 1 1234 567</a></span>
+                        </li>
+                        <li class="list-item"><i class="fas fa-envelope fa-2x"></i>
+                            <span class="contact-text gmail"><a href="mailto:info@travelspot.hr">info@travelspot.hr</a></span>
+                        </li>
+                    </ul>
+                    <hr>
+                    <ul class="social-media-list">
+                        <li><a href="https://www.linkedin.com/in/tea-bili%C4%87-65b18626b/?originalSubdomain=hr" target="_blank" class="contact-icon">
+                            <i class="fab fa-linkedin"></i></a>
+                        </li>
+                        <li><a href="https://github.com/bilict" target="_blank" class="contact-icon">
+                            <i class="fab fa-github"></i></a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="copyright">&copy; 2025 TravelSpot. Sva prava pridržana.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 TravelSpot. Sva prava pridržana.</p>
+    </footer>
+
+    <script>
+        document.querySelector('#contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('successMessage').style.display = 'block';
+            setTimeout(() => {
+                e.target.elements.name.value = '';
+                e.target.elements.email.value = '';
+                e.target.elements.message.value = '';
+                document.getElementById('successMessage').style.display = 'none';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
